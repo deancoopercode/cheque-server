@@ -1,0 +1,17 @@
+
+* npm init
+
+
+
+Install express.js and save it as a dependancy
+* npm install --save express
+
+npm install mocha --save
+npm install chai --save
+
+
+to start
+node index.js
+
+
+Ctrl-C to exit node gracefully.
