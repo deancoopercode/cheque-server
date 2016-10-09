@@ -2,7 +2,7 @@ Requirements
 ================
 Node v4.x needs to be installed prior to install node packages.
 
-* please perform a npm install to ensure depentant modules are present
+* please perform a npm install to ensure dependent modules are present
 
 
 Execution
