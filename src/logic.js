@@ -6,17 +6,32 @@ var logic = {
     var finalString = "";
     var tempNumber, wholeNumber, tensInteger;
 
+    //remove dollar sign if present.
+    number = number.replace('$','');
+
+    //test for non numbers
+    if (isNaN(parseFloat(number))){
+      return "Number not entered";
+    }
+
     // calculate and save the decimal portion
     var decimalPortion = (number - Math.floor(number))
 
-    //a proper way to round numbers using exponential notation
+    //a proper way to round numbers using exponential notation (split over 2 lines)
     decimalPortion = Number(Math.round(decimalPortion+'e2')+'e-2');
 
     //convert to integer
     number = parseInt(number)
 
+    //CHECK FOR 0
+    if (number == 0) {
+        finalString += "ZERO"
+    }
+    else if (number > 999999999) {
+        return "Number too large"
+    }
     //COUNT number of MILLIONS to add
-    if (number > 999999) {
+    else if (number > 999999) {
       hundredInteger = number / 1000000;
       wholeNumber  = Math.floor(hundredInteger)
       finalString += calculateBelowOneThousand(wholeNumber)
@@ -98,6 +113,7 @@ function calculateBelowOneThousand(number) {
 
 function lookupOneHundred(number) {
   switch (number) {
+    case 0: return "ZERO";
     case 1: return "ONE";
     case 2: return "TWO";
     case 3: return "THREE";

@@ -1,17 +1,25 @@
+Requirements
+================
+Node v4.x needs to be installed prior to install node packages.
 
+Execution
+=========
+To start the development server (service)
+* node index.js
+
+To run tests
+* npm test
+
+
+Procedure
+================
+
+1) Initialise a new package.json file.
 * npm init
 
-
-
-Install express.js and save it as a dependancy
+2) Install express.js and save it as a dependancy
 * npm install --save express
 
-npm install mocha --save
-npm install chai --save
-
-
-to start
-node index.js
-
-
-Ctrl-C to exit node gracefully.
+3) Install testing frameworks
+* npm install mocha --save
+* npm install chai --save

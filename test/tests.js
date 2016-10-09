@@ -4,6 +4,16 @@ var logicController = require("../src/logic.js");
 //unit tests to run
 describe("Convert numbers to word format", function() {
 
+    it("Convert 0", function() {
+      var result = logicController.convertNumber('0');
+      expect(result).to.equal("ZERO DOLLARS");
+    });
+
+    it("Convert 0.23", function() {
+      var result = logicController.convertNumber('0.23');
+      expect(result).to.equal("ZERO DOLLARS AND TWENTY THREE CENTS");
+    });
+
     it("Convert 5", function() {
       var result = logicController.convertNumber('5');
       expect(result).to.equal("FIVE DOLLARS");
@@ -78,5 +88,19 @@ describe("Convert numbers to word format", function() {
       expect(result).to.equal("NINE MILLION NINE HUNDRED AND NINETY NINE THOUSAND NINE HUNDRED AND NINETY NINE DOLLARS");
     });
 
+    it("Convert 9999999999", function() {
+      var result = logicController.convertNumber('999999999');
+      expect(result).to.equal("NINE HUNDRED AND NINETY NINE MILLION NINE HUNDRED AND NINETY NINE THOUSAND NINE HUNDRED AND NINETY NINE DOLLARS");
+    });
+
+    it("Convert 9999999999.98", function() {
+      var result = logicController.convertNumber('999999999.98');
+      expect(result).to.equal("NINE HUNDRED AND NINETY NINE MILLION NINE HUNDRED AND NINETY NINE THOUSAND NINE HUNDRED AND NINETY NINE DOLLARS AND NINETY EIGHT CENTS");
+    });
+
+    it("Convert 9999999999", function() {
+      var result = logicController.convertNumber('9999999999');
+      expect(result).to.equal("Number too large");
+    });
 
   });
